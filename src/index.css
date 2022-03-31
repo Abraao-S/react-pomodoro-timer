@@ -1,9 +1,7 @@
- /* life hacks */
-/* * {
-  border: 1px solid red;
-} */
+/* * {border: 1px solid red;} */
 
 body {
+  /* border: 1px solid red; */
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
   margin: 0;
@@ -16,4 +14,83 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app-container {
+  /* border: 5px solid red; */
+  
+  /* display */
+  display: flex;
+  flex-direction: column;
+
+  /* margin: <margin-top> || <margin-right> || <margin-bottom> || <margin-left> */
+  /* margin: 10% 20% 10% 20%; */
+  margin: 10% auto;
+  
+  /* measures */
+  min-height: 300px;
+  height: 100%;
+  width: 40%;
+
+  /* background */
+  background-color: #dd6662;
+
+  /* alignments */
+  justify-content: center;  /* main axis */
+  align-items: center;  /* cross axis */
+  text-align: center;
+  
+  /* borders */
+  border-radius: 10px;
+}
+
+.pomodoro-title {
+  /* color: black; */
+  font-size: large;
+  margin-bottom: 1em;
+}
+
+.buttons-panel-top {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 5px;
+}
+
+.button-top {
+  /* border: 1px solid red; */
+  text-decoration: none;
+}
+
+.button-top-selected {
+  text-decoration: underline;
+}
+
+button-top:focus {
+  outline: none;
+}
+
+.time-string {
+  /* border: 1px solid red; */
+  margin: 1rem 1rem;
+  font-size: 3rem;
+}
+
+.buttons-panel-bottom {
+  /* border: 1px solid red; */
+  display: flex;
+  gap: 2em;
+  margin-bottom: 5px;
+}
+
+/* small screens */
+@media (max-width: 800px) {
+  .buttons-panel-bottom {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  
+  .buttons-panel-top {
+    flex-direction: column;
+    gap: 0.5em;
+  }
 }
