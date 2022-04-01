@@ -74,6 +74,14 @@ button-top:focus {
   margin-bottom: 5px;
 }
 
+a {
+  text-decoration: none;
+}
+
+.credits {
+  text-align: center;
+}
+
 /* small screens */
 @media (max-width: 800px) {
   .buttons-panel-bottom {

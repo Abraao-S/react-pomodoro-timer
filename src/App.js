@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import  Credits  from './Credits.js';
 
 const initialTimeInSeconds = 25 * 60;	// equals 1500 seconds or 25 minutes
 // const initialTimeInSeconds = 25 * 60 - 4;	// test: 4 seconds passed
@@ -47,22 +48,22 @@ function App() {
 
   // v1: working! resets the timer
   useEffect(() => {
-    if(isPomodoroSectionSelected) {
+    if (isPomodoroSectionSelected) {
       setTotalSeconds(initialTimeInSeconds);
-    } else 
-    if (isIntervalSectionSelected) {
-      setTotalSeconds(initialBreakTimeInSeconds);
-    }
+    } else
+      if (isIntervalSectionSelected) {
+        setTotalSeconds(initialBreakTimeInSeconds);
+      }
   }, [isPomodoroSectionSelected, isIntervalSectionSelected, timerReset]);
 
   // v1: in progress! changes timer according to section selected
   useEffect(() => {
     if (isPomodoroSectionSelected) {
       setTotalSeconds(initialTimeInSeconds);
-    } else 
-    if(isIntervalSectionSelected) {
-      setTotalSeconds(initialBreakTimeInSeconds);
-    }
+    } else
+      if (isIntervalSectionSelected) {
+        setTotalSeconds(initialBreakTimeInSeconds);
+      }
   }, [isPomodoroSectionSelected, isIntervalSectionSelected]);
 
   // v1: working!
@@ -83,13 +84,13 @@ function App() {
   const handleClickPomodoroSection = () => {
     console.log("INSIDE FUNCTION: handleClickPomodoroSection()");
     setIsPomodoroSectionSelected(true);
-    setIsIntervalSectionSelected(false);    
+    setIsIntervalSectionSelected(false);
     // setIsBreakActive(false);
     if (isIntervalSectionSelected) {
       setIsTimerActive(false);
     }
   }
-  
+
   // v1: in progress!
   const handleClickIntervalSection = () => {
     console.log("INSIDE FUNCTION: handleClickIntervalSection()");
@@ -112,41 +113,46 @@ function App() {
   // }
 
   return (
-    <div className='app-container'>
+    <>
+      <div className='app-container'>
 
-      <span className='pomodoro-title'>
-        React Pomodoro Timer
-      </span>
+        <span className='pomodoro-title'>
+          React Pomodoro Timer
+        </span>
 
-      <div className='buttons-panel-top'>
+        <div className='buttons-panel-top'>
 
-        <button type="button" className={`btn button-top${isPomodoroSectionSelected ? '-selected' : ''}`} onClick={handleClickPomodoroSection}>
-          Pomodoro
-        </button>
+          <button type="button" className={`btn button-top${isPomodoroSectionSelected ? '-selected' : ''}`} onClick={handleClickPomodoroSection}>
+            Pomodoro
+          </button>
 
-        <button type="button" className={`btn button-top${isIntervalSectionSelected ? '-selected' : ''}`} onClick={handleClickIntervalSection}>
-          Interval
-        </button>
+          <button type="button" className={`btn button-top${isIntervalSectionSelected ? '-selected' : ''}`} onClick={handleClickIntervalSection}>
+            Interval
+          </button>
+
+        </div>
+
+        <div className='time-string'>
+          <span>{String(minutes).padStart(2, '0')}</span>
+          <span>:</span>
+          <span>{String(seconds).padStart(2, '0')}</span>
+        </div>
+
+        <div className='buttons-panel-bottom'>
+          <button type="button" className="btn btn-danger" onClick={handleClickStartPause}>
+            {buttonText}
+          </button>
+
+          <button type="button" className="btn btn-danger" onClick={handleClickReset}>
+            RESET
+          </button>
+        </div>
 
       </div>
- 
-      <div className='time-string'>
-        <span>{String(minutes).padStart(2, '0')}</span>
-        <span>:</span>
-        <span>{String(seconds).padStart(2, '0')}</span>
+      <div className='credits'>
+        <Credits/>
       </div>
-
-      <div className='buttons-panel-bottom'>
-        <button type="button" className="btn btn-danger" onClick={handleClickStartPause}>
-          {buttonText}
-        </button>
-
-        <button type="button" className="btn btn-danger" onClick={handleClickReset}>
-          RESET
-        </button>
-      </div>
-
-    </div>
+    </>
   )
 }
 
