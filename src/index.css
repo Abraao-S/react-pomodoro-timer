@@ -1,5 +1,3 @@
-/* * {border: 1px solid red;} */
-
 body {
   /* border: 1px solid red; */
   /* -webkit-font-smoothing: antialiased;
@@ -17,16 +15,13 @@ code {
 }
 
 .app-container {
-  /* border: 5px solid red; */
-  
   /* display */
   display: flex;
   flex-direction: column;
 
   /* margin: <margin-top> || <margin-right> || <margin-bottom> || <margin-left> */
-  /* margin: 10% 20% 10% 20%; */
   margin: 10% auto;
-  
+
   /* measures */
   min-height: 300px;
   height: 100%;
@@ -36,17 +31,17 @@ code {
   background-color: #dd6662;
 
   /* alignments */
-  justify-content: center;  /* main axis */
+  justify-content: center;    /* main axis */
   align-items: center;  /* cross axis */
   text-align: center;
-  
+
   /* borders */
   border-radius: 10px;
 }
 
 .pomodoro-title {
-  /* color: black; */
-  font-size: large;
+  color: black;
+  font-size:x-large;
   margin-bottom: 1em;
 }
 
@@ -57,7 +52,6 @@ code {
 }
 
 .button-top {
-  /* border: 1px solid red; */
   text-decoration: none;
 }
 
@@ -70,13 +64,11 @@ button-top:focus {
 }
 
 .time-string {
-  /* border: 1px solid red; */
   margin: 1rem 1rem;
   font-size: 3rem;
 }
 
 .buttons-panel-bottom {
-  /* border: 1px solid red; */
   display: flex;
   gap: 2em;
   margin-bottom: 5px;
@@ -88,7 +80,7 @@ button-top:focus {
     flex-direction: column;
     gap: 0.5em;
   }
-  
+
   .buttons-panel-top {
     flex-direction: column;
     gap: 0.5em;
